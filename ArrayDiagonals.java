@@ -16,7 +16,7 @@ public class ArrayDiagonals {
 		 for (int i = 0; i < size; i++) {
 	            for (int j = 0; j <size; j++) {
 	 
-	                // Condition for left diagonal
+	                // Condition for left diagonal elements
 	                if (i == j) {
 	                    System.out.print(arr[i][j] + " ");
 	                }
@@ -31,7 +31,7 @@ public class ArrayDiagonals {
 	        for (int i = 0; i < size; i++) {
 	            for (int j = 0; j < size; j++) {
 	 
-	                // Condition for secondary diagonal
+	                // Condition for right diagonal elements
 	                if ((i + j) == (size - 1)) {
 	                    System.out.print(arr[i][j] + " ");
 	                }
