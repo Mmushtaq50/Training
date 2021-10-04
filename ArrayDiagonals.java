@@ -13,11 +13,11 @@ public class ArrayDiagonals {
 		int size=arr.length;
 		
 		 System.out.print("Left Diagonal Elements: ");
-		 for (int i = 0; i < size; i++) {
+		 for (int i = 0; i < size; i++) {		// Initilize the elements in matrix array
 	            for (int j = 0; j <size; j++) {
 	 
 	                // Condition for left diagonal elements
-	                if (i == j) {
+	                if (i == j) {					
 	                    System.out.print(arr[i][j] + " ");
 	                }
 	            }
@@ -28,7 +28,7 @@ public class ArrayDiagonals {
 		 
 		 System.out.print("Right Diagonal Elements: ");
 		 
-	        for (int i = 0; i < size; i++) {
+	        for (int i = 0; i < size; i++) {		// Initilize the elements in matrix array
 	            for (int j = 0; j < size; j++) {
 	 
 	                // Condition for right diagonal elements
