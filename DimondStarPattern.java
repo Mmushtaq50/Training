@@ -13,7 +13,7 @@ public class DimondStarPattern {
 		int mid =(Nlines+1)/2;   /* let Nlines =7 ;min =(7+1)/2 ;mid =4;
 									so mid line should have 7 starts and no spaces */
 		//Upper Traingle
-		for(int i=1;i<=mid;i++) {
+		for(int i=1;i<=mid;i++) {   //i for both Traingles
 			
 			//For spaces
 			for(int s=1; s <=(mid-i); s++) {
