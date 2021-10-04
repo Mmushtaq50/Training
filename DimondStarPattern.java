@@ -61,7 +61,8 @@ public class DimondStarPattern {
  2		3		3		     *	*  *
  3		5		2		  *  *  *  *  *
  4		7		1              *  *  *  *  *  *  *
- 5		9		0	    *  *  *  *  *  *  *  *  *
+ 
+ 5		9		0	    *  *  *  *  *  *  *  *  *    // This line i=5 is mid ,which has no spaces and line is filled with stars
 
 
 
