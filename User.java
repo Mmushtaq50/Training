@@ -85,11 +85,7 @@ public class User {
 				Debit(amount1);
 				System.out.println();
 				break;
-				
-			case 'E':
-				System.out.println("Your Bank User ID:"+userId);
-				System.out.println();
-				break;
+		
 			default:
 				System.out.println("Invalid Option! Try Again");
 				break;
