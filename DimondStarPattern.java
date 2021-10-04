@@ -15,7 +15,8 @@ public class DimondStarPattern {
 		//Upper Traingle
 		for(int i=1;i<=mid;i++) {   //i for both Traingles
 			
-			//For spaces
+			//For spaces							
+				
 			for(int s=1; s <=(mid-i); s++) {
 				 System.out.print(" ");
 			}
@@ -50,3 +51,30 @@ public class DimondStarPattern {
 		}
 	}
 }
+
+/*
+						
+						Upper Traingle
+ 
+ i		j		s			
+ 1		1		4			*
+ 2		3		3		     *	*  *
+ 3		5		2		  *  *  *  *  *
+ 4		7		1              *  *  *  *  *  *  *
+ 5		9		0	    *  *  *  *  *  *  *  *  *
+
+
+
+ 1		7		1	       *  *  *  *  *  *  *
+ 2     		5		2		  *  *  *  *  *  
+ 3		3		3		     *  *  *
+ 4		1		4			*
+						Lower Traingle
+						
+	*/					
+						
+
+
+
+
+
