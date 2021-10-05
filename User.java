@@ -4,14 +4,15 @@ import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+public class User {
 public static void main(String[] args) {
 	
 	User m = new User("Mushtaq","0582");
 	m.Menu();
-	
+
 }
 
-public class User {
+
 	
 	int balance;
 	String userName;
@@ -22,7 +23,7 @@ public class User {
 		 userId=Id;
 	}
 	
-	void Credit(int amount)
+	public void Credit(int amount)
 	{
 		if(amount != 0) {	// the number should not be Negative
 			balance = balance + amount;
@@ -32,7 +33,7 @@ public class User {
 			System.out.println("Amount cannot be Negative");
 	}
 	
-	void Debit(int amount) {
+	public void Debit(int amount) {
 		if(amount != 0) {
 			balance = balance - amount;
 			System.out.println("Transaction  done on " +LocalDateTime.now()+": Amount Debited from Account Sucessfully: Remaining Amount:" +balance);
@@ -46,7 +47,7 @@ public class User {
 		
 	}
 	
-	void Menu() {
+	public void Menu() {
 		char option='\0';
 		System.out.println("Welcome dear User"+userName);
 		System.out.println("A. Your Id id :"+userId);
@@ -99,4 +100,3 @@ public class User {
 		}
 	}
 }
-
