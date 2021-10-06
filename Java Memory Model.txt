@@ -1,0 +1,27 @@
+4.Java Memory model?
+
+-Describes how threads in the Java programming language interact through memory.
+- specifies how the JVM works with the computer's memory (RAM).
+-how java threads access the memory and how memory is organised in JVM
+ 
+1.Each thread running in the Java virtual machine has its own thread stack. 
+
+2. The thread stack contains information about what methods the thread has called to reach the current point of execution.
+	--The thread stack also contains all local variables for each method being executed (all methods on the call stack).
+ 	--A thread can only access it's own thread stack. 
+
+3.Local variables created by a thread are invisible to all other threads than the thread who created it
+	--All local variables of primitive types ( boolean, byte, short, char, int, long, float, double) are fully
+  stored on the thread stack and are thus not visible to other threads. 
+	--One thread may pass a copy of a pritimive variable to another thread, but it cannot share the primitive local variable itself.
+
+4.The heap contains all objects created in your Java application, regardless of what thread created the object. 
+  This includes the object versions of the primitive types (e.g. Byte, Integer, Long etc.).
+	--- It does not matter if an object was created and assigned to a local variable, or created as a      
+	 member variable of another object, the object is still stored on the heap.
+ 
+5. A local variable may also be a reference to an object. In that case the reference (the local variable) is stored on
+   the thread stack, but the object itself if stored on the heap.
+
+6. An object may contain methods and these methods may contain local variables. These local variables are also stored on
+   the thread stack, even if the object the method belongs to is stored on the heap.
