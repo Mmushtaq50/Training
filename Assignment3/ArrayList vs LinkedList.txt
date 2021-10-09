@@ -1,0 +1,47 @@
+ArrayList Vs LinkedList:
+
+1) ArrayList internally uses a dynamic array to store the elements.
+
+1) LinkedList internally uses a doubly linked list to store the elements.
+
+--------------------------------------------------------------------------------------
+
+2) Manipulation with ArrayList is slow because it internally uses an array. 
+	If any element is removed from the array, all the bits are shifted in memory.
+
+2)Manipulation with LinkedList is faster than ArrayList because it uses a 
+	doubly linked list, so no bit shifting is required in memory.
+
+---------------------------------------------------------------------------------------
+
+3) An ArrayList class can act as a list only because it implements List only.
+
+3)LinkedList class can act as a list and queue both because it implements List
+	 and Deque interfaces.
+
+--------------------------------------------------------------------------------------
+
+4) ArrayList is better for storing and accessing data.
+
+4)LinkedList is better for manipulating data.
+
+---------------------------------------------------------------------------------------
+
+5)ArrayList class implements a List interface. Therefore, this acts as a list.
+
+5)LinkedList class implements both the List interface and the Deque interface.
+	 Therefore, it can act as a list and a deque.
+
+---------------------------------------------------------------------------------------
+
+6)ArrayList class works better when the application demands storing the data 
+	and accessing it.
+
+6)LinkedList class works better when the application demands manipulation of the 
+	stored data.
+
+-----------------------------------------------------------------------------------------
+
+7)ArrayList is faster in storing and accessing data.
+
+7)LinkedList is faster in manipulation of data.

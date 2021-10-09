@@ -1,0 +1,103 @@
+HashMap: HashMap<String,String> hm = new HashMap<String,String>();
+
+	 -The HashMap will work on the Hashing principal.
+	 -The default capacity(size) is 16.
+	 -HashMap will maintain the Key and Value relationship.
+	 -HashMap is maintain in the form of Buckets.
+
+	 -Hashcode plays the vital role in HashMap.
+		Helps in identify which bucket it should add or place
+		and also helps in retriving the object from HashMap.
+		--Hashcode will fetch the Unique value in Bucket,
+		  by which we can get distinct value such that
+		  HashMap is placed.
+		  Can also achive the object retriving at better 
+		  performance.
+
+
+	 -Equal() Method also will play the vital role in HashMap.
+		When two or more Keys are having the same has code
+		then equal() will rescue to identify, which key 
+		it actually wanted to fetch while getting the value and 
+		while storing into the HashMap.
+
+----------------------------------------------------------------------------------------
+	
+	putting value in HashMap:
+
+		HashMap will allow only one key to put.
+
+		1.It identifys if the Key is Null or not [ HaspMapPut(Key) is (Null || NOt) ]
+		   if(null) =
+			 it will place new value in the index of 0.
+		   if(!null) = 
+			will handle 2 senarios
+		           -check weather the Key is existing in HashMap or not.
+		      	    if(existing) = 
+				The new value to override the old value.
+			    if(!existing) =
+				 It will be added to Bucket by identifying 
+			   	 Hashcode and key value by identifying bucket index.	
+		2.Next the Hasscode value will be place in indexFor()
+			-which returns what is the index of bucket with the help of 
+			table length.
+		3.After identifying the paticular index
+			-if we pass the HashMap with the same Key again the HashMap will
+			   override the previous value with New value.
+			-Otherwise it will be added to addEntry()
+			  While addingEntry for(Key,value)
+			    a)It will make sure Hash value is created
+			    b)if 2 keys are having same Hash values the it will apply
+				equal()
+			    c)if both the keys are equal,then also it will override the
+				latest value with old value.  
+		4.Now when you keep on adding the entry and if it has reached the 
+		  maximum Threshold.
+			-then it should double(Resize) the Hashmap.
+			---Depending upon the load factor and initial capacity the
+			   the Resize() will work.
+
+		       --------------------------------------------------------------------
+
+		Adding Entry implementation:
+
+			void addEntry(int hash, K key,V value ,int bucketIndex){
+
+				Entry<K,V> e = table[bucketIndex];
+				table[bucketIndex] = new Entry<K,V>( hash,key,value,e);
+				if(size++ >= threshold)
+					resize(2*table.length);
+			     }
+
+			---------------------------------------------------------------- 
+
+		Put implementation:
+			
+			public V put(K key ,V value){
+
+				if(key == Null)
+					return PutForNullKeyValue(value);
+			    int hash = hash(Key.hashcode());
+			    int i = indexFor(hash.table.length);
+			 }
+
+			--------------------------------------------------------------------
+
+		putting value in HashMap:		//Similar process as put()
+			
+			1.Check weather(key) is (null || !null)
+				if(null)  
+					identify the 0th index and then it will try to get value
+				 	placed on Oth index of bucket.	
+				if(!null)
+					calculate Hashcode and identify the index of paticular
+					hashcode in the HashMap and get the value.
+
+			2.But here there is a chance that two or more keys will have same
+			 hashcode.
+				 -In this case, in the same bucket it will maintain the 
+				  LinkedList form 
+				 -Then it will apply equal() , if(equal) it will return the 
+					element.				
+
+

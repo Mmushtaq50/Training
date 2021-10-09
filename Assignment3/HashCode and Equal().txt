@@ -1,0 +1,17 @@
+HashCode:
+
+	 -Hashcode plays the vital role in HashMap.
+		Helps in identify which bucket it should add or place
+		and also helps in retriving the object from HashMap.
+		--Hashcode will fetch the Unique value in Bucket,
+		  by which we can get distinct value such that
+		  HashMap is placed.
+		  Can also achive the object retriving at better 
+		  performance.
+
+	
+	 -Equal() Method also will play the vital role in HashMap.
+		When two or more Keys are having the same has code
+		then equal() will rescue to identify, which key 
+		it actually wanted to fetch while getting the value and 
+		while storing into the HashMap.

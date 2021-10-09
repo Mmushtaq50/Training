@@ -1,0 +1,104 @@
+ArrayList - is an implementation of List Interface.
+	
+	List m = new ArrayList(); 
+			//Default capacity = 10 = size.ArrayList;
+			// = The number of elements it contains
+
+	---> Four characteristics of ArrayList are
+	1.It can dynamically Grow its size.
+
+	     trainsent Object[] elementData;
+		-The Arrylist class has an Object of array 
+		 Object[] which is transient.
+		 (The basic data structure used for ArrayList)
+		-The ArrayList store's the Elements 
+		 in elementData variable.
+
+	2.It maintaince the Insertion Order.
+
+		-Since,arrayList is Ordered collection(AKA sequence),
+		 so it maintaince Insertion Order.
+
+		-If you want to maintain the Insertion Order for
+		 Unique values, the use LinkedHashSet
+
+			//create LinkedHashSet
+		LinkedHashSet<Intrger> Set =new LinkedHashSet<>();
+
+			//add ArrayList Object in LinkedHashSet
+		LinkedHashSet<Intrger> Set =new LinkedHashSet<>(m); 
+					// m = ArrayList Object
+
+			
+	3.It will allow the Duplicates while HasSet will not allow.
+
+	4.It is Index Based.
+
+----------------------------------------------------------------------------------
+	-How the size of ArrayList is prepared Internally ?
+
+		When we define Collection
+		
+		public ArrayList (Collection c){
+
+			elementData = c.m; // covert Collection into ArrayList 
+					   // m = Arrayist Object
+			size = elementData.length();
+		}
+		-With this size the ArrayList is going to be prepared.
+
+-------------------------------------------------------------------------------------
+	-How elements are added ino the List Internally ?  //List.add(1); how ?
+		
+	Method-1:
+		public boolean(E e){
+
+			ensureCapacity(size+1);		/* If we want to add new element 
+							  then definetly size should be incremented */
+			elementData(size++) = e;
+			return true;
+		}
+
+	-The Method ensureCapacity is responsible for ArrayList to grow
+		
+		public void intensureCapacity(int minCapacity){
+			modcount++;
+		  int OldCapacity=elementData.length;
+
+		  if(minCapacity > OldCapacity){
+		  Object oldData = elementData;
+
+		  int newCapacity = (OldCapacity * 3)/2+1;
+
+		  if(newCapacity > minCapacity){	
+		     newCapacity = minCapacity;
+
+		 	 elementData=Array.copyof(elementData,newCapacity);
+		   }
+	          }
+	         }	
+	 
+
+	Method-2:
+	
+	-Based on Index value we can add element into the List.
+
+		public void add(int index,E element){
+
+			rangeCheckForAdd(Index); //checking weather the index is with in the size
+			
+			ensureCapacity(size+1);		/* If we want to add new element 
+							  then definetly size should be incremented */
+
+			elementData=Array.copyof(elementData,index,elementData,index+1,size-index);
+			elementData[index] = element;
+		}
+
+		private void rangeCheckForAdd(int index){  // index must be with in the range of ArrayList or Array Size.
+
+			if(index > size || index < 0)
+
+				throw new IndexOutBoundsException(outOfBoundsMsg(index));
+			}
+-------------------------------------------------------------------------------------------------------
+			

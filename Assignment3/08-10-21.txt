@@ -1,0 +1,400 @@
+ArrayList - is an implementation of List Interface.
+	
+	List m = new ArrayList(); 
+			//Default capacity = 10 = size.ArrayList;
+			// = The number of elements it contains
+
+	---> Four characteristics of ArrayList are
+	1.It can dynamically Grow its size.
+
+	     trainsent Object[] elementData;
+		-The Arrylist class has an Object of array 
+		 Object[] which is transient.
+		 (The basic data structure used for ArrayList)
+		-The ArrayList store's the Elements 
+		 in elementData variable.
+
+	2.It maintaince the Insertion Order.
+
+		-Since,arrayList is Ordered collection(AKA sequence),
+		 so it maintaince Insertion Order.
+
+		-If you want to maintain the Insertion Order for
+		 Unique values, the use LinkedHashSet
+
+			//create LinkedHashSet
+		LinkedHashSet<Intrger> Set =new LinkedHashSet<>();
+
+			//add ArrayList Object in LinkedHashSet
+		LinkedHashSet<Intrger> Set =new LinkedHashSet<>(m); 
+					// m = ArrayList Object
+
+			
+	3.It will allow the Duplicates while HasSet will not allow.
+
+	4.It is Index Based.
+
+-How the size of ArrayList is prepared Internally ?
+
+		When we define Collection
+		
+		public ArrayList (Collection c){
+
+			elementData = c.m; // covert Collection into ArrayList 
+					   // m = Arrayist Object
+			size = elementData.length();
+		}
+		-With this size the ArrayList is going to be prepared.
+
+-How elements are added ino the List Internally ?  //List.add(1); how ?
+		
+	Method-1:
+		public boolean(E e){
+
+			ensureCapacity(size+1);		/* If we want to add new element 
+							  then definetly size should be incremented */
+			elementData(size++) = e;
+			return true;
+		}
+
+	-The Method ensureCapacity is responsible for ArrayList to grow
+		
+		public void intensureCapacity(int minCapacity){
+			modcount++;
+		  int OldCapacity=elementData.length;
+
+		  if(minCapacity > OldCapacity){
+		  Object oldData = elementData;
+
+		  int newCapacity = (OldCapacity * 3)/2+1;
+
+		  if(newCapacity > minCapacity){	
+		     newCapacity = minCapacity;
+
+		 	 elementData=Array.copyof(elementData,newCapacity);
+		   }
+	          }
+	         }	
+	 
+
+	Method-2:
+	
+	-Based on Index value we can add element into the List.
+
+		public void add(int index,E element){
+
+			rangeCheckForAdd(Index); //checking weather the index is with in the size
+			
+			ensureCapacity(size+1);		/* If we want to add new element 
+							  then definetly size should be incremented */
+
+			elementData=Array.copyof(elementData,index,elementData,index+1,size-index);
+			elementData[index] = element;
+		}
+
+		private void rangeCheckForAdd(int index){  // index must be with in the range of ArrayList or Array Size.
+
+			if(index > size || index < 0)
+
+				throw new IndexOutBoundsException(outOfBoundsMsg(index));
+			}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+____________________________________________________________________________________________________________________________________________________________________________________
+
+HashMap: HashMap<String,String> hm = new HashMap<String,String>();
+
+	 -The HashMap will work on the Hashing principal.
+	 -The default capacity(size) is 16.
+	 -HashMap will maintain the Key and Value relationship.
+	 -HashMap is maintain in the form of Buckets.
+
+	 -Hashcode plays the vital role in HashMap.
+		Helps in identify which bucket it should add or place
+		and also helps in retriving the object from HashMap.
+		--Hashcode will fetch the Unique value in Bucket,
+		  by which we can get distinct value such that
+		  HashMap is placed.
+		  Can also achive the object retriving at better 
+		  performance.
+
+
+	 -Equal() Method also will play the vital role in HashMap.
+		When two or more Keys are having the same has code
+		then equal() will rescue to identify, which key 
+		it actually wanted to fetch while getting the value and 
+		while storing into the HashMap.
+
+
+	
+putting value in HashMap:
+
+		HashMap will allow only one key to put.
+
+		1.It identifys if the Key is Null or not [ HaspMapPut(Key) is (Null || NOt) ]
+		   if(null) =
+			 it will place new value in the index of 0.
+		   if(!null) = 
+			will handle 2 senarios
+		           -check weather the Key is existing in HashMap or not.
+		      	    if(existing) = 
+				The new value to override the old value.
+			    if(!existing) =
+				 It will be added to Bucket by identifying 
+			   	 Hashcode and key value by identifying bucket index.	
+		2.Next the Hasscode value will be place in indexFor()
+			-which returns what is the index of bucket with the help of 
+			table length.
+		3.After identifying the paticular index
+			-if we pass the HashMap with the same Key again the HashMap will
+			   override the previous value with New value.
+			-Otherwise it will be added to addEntry()
+			  While addingEntry for(Key,value)
+			    a)It will make sure Hash value is created
+			    b)if 2 keys are having same Hash values the it will apply
+				equal()
+			    c)if both the keys are equal,then also it will override the
+				latest value with old value.  
+		4.Now when you keep on adding the entry and if it has reached the 
+		  maximum Threshold.
+			-then it should double(Resize) the Hashmap.
+			---Depending upon the load factor and initial capacity the
+			   the Resize() will work.
+
+		      
+	Adding Entry implementation:
+
+			void addEntry(int hash, K key,V value ,int bucketIndex){
+
+				Entry<K,V> e = table[bucketIndex];
+				table[bucketIndex] = new Entry<K,V>( hash,key,value,e);
+				if(size++ >= threshold)
+					resize(2*table.length);
+			     }
+
+			
+
+	Put implementation:
+			
+			public V put(K key ,V value){
+
+				if(key == Null)
+					return PutForNullKeyValue(value);
+			    int hash = hash(Key.hashcode());
+			    int i = indexFor(hash.table.length);
+			 }
+
+			
+
+	putting value in HashMap:		//Similar process as put()
+			
+			1.Check weather(key) is (null || !null)
+				if(null)  
+					identify the 0th index and then it will try to get value
+				 	placed on Oth index of bucket.	
+				if(!null)
+					calculate Hashcode and identify the index of paticular
+					hashcode in the HashMap and get the value.
+
+			2.But here there is a chance that two or more keys will have same
+			 hashcode.
+				 -In this case, in the same bucket it will maintain the 
+				  LinkedList form 
+				 -Then it will apply equal() , if(equal) it will return the 
+					element.				
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+____________________________________________________________________________________________________________________________________________________________________________________
+
+HashSet : 
+	1.It is a special Collection that contains Unique Elements 
+	  and doesnot allow Duplication.
+	2.HashSet extends AbstractSet and implements the set in Interface.
+	3.HashSet allows only one null value.
+	4.It uses Hash Table to store data internallyand works on a 
+	 hashing principal.
+	5.HashSet only store the elements and not the key values 
+	  pairs like HashMap.
+	6.HashSet internally uses HashMap for storing the values
+		-Whenever the object is created for HashSet it internally creats
+	  	the object of HashMap.
+		-Beacuse in HashMap each key is Unique. 
+				public HashSet{
+					map = new HashMap<>();
+				  }
+
+
+    How the elements are added in the HashSet?
+	
+	 In HashSet , from Add() method the put() from HashMap is called, where 
+		the value which has to be added in the set becomes Key and constant
+		objects
+		-PRESENT is used as a value.
+	
+	PRESENT?
+	    In HashSet PRESENT implementation is defined as 
+		private static void final object PRESENT = new Object();
+
+	
+	 Add() method implementation?
+		public boolean Add(E e){
+			returnMap.put(E,PRESENT)==null;
+		}
+
+	so here if you notice that, The add() method of HashSet
+	calls put() method of backing HashMap object.
+
+	-It passes the element as the key and a constant  present is
+	  stored at its value.
+			
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+____________________________________________________________________________________________________________________________________________________________________________________
+
+Maintain an order in set?
+	
+	1. LinkedHashSet can retain the order of the collection.
+	   you can wrap your set using this implementation.
+	2. SortedSet implementation can be used for sorted order
+
+		Set myOrderedSet = new LinkedHashSet(mySet);
+
+	keep the insertion order: LinkedHashSet and CopyOnWriteArraySet
+	 (thread-safe)
+	keep the items sorted within the set: TreeSet, EnumSet 
+	(specific to enums) and ConcurrentSkipListSet 
+	(thread-safe)
+	does not keep the items in any specific order: HashSet (the one you tried)
+	 
+	-you can either sort the items first and then use any (LinkedHashSet or TreeSet).
+	-Or alternatively and more efficiently, you can just add unsorted data to a 
+	TreeSet which will take care of the sorting automatically.
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+____________________________________________________________________________________________________________________________________________________________________________________
+
+
+HashCode:
+
+	 -Hashcode plays the vital role in HashMap.
+		Helps in identify which bucket it should add or place
+		and also helps in retriving the object from HashMap.
+		--Hashcode will fetch the Unique value in Bucket,
+		  by which we can get distinct value such that
+		  HashMap is placed.
+		  Can also achive the object retriving at better 
+		  performance.
+
+	
+	 -Equal() Method also will play the vital role in HashMap.
+		When two or more Keys are having the same has code
+		then equal() will rescue to identify, which key 
+		it actually wanted to fetch while getting the value and 
+		while storing into the HashMap.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+____________________________________________________________________________________________________________________________________________________________________________________
+
+ Fail Fast and Fail Safe:
+
+  1. Fail Fast and Fail Safe are two types of iterators which
+	Java Collection supports.	
+  2. These iterators are very useful in exception handling.
+
+---------------------------------------------------------------------------
+
+    The Fail fast iterator =
+
+	-- Aborts the operation as soon it 
+       	   exposes failures and stops the entire operation
+
+	-- The Fail Fast system is a system that shuts down 
+	   immediately after an error is reported. All the 
+	   operations will be aborted instantly in it.
+
+	-- They are memory savers, don't require extra memory.
+
+	-- The Fail Fast iterator uses an internal flag called
+	   modCount to know the status of the collection.
+	 
+	-- The modCount flag is updated each time a collection is
+	   modified; 
+	   it checks the next value; 
+	   if it finds, then the modCount will be modified after 
+	   this iterator has been created. It will 
+	   throw ConcurrentModificationException. if a collection
+	   is modified while iterating over it.
+
+	-- uses an original collection to traverse over the 
+	   collection's elements.
+ 
+----------------------------------------------------------------------------
+
+    The Fail Safe iterator =
+
+	-- doesn't Abort the operation in 
+	   case of a failure.
+
+	-- The Fail Safe is a system that continues to operate 
+	   even after an error or fail has occurred. These systems  
+	   do not abort the operations instantly; instead, they
+	   will try to hide the errors and will try to avoid failures 
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+____________________________________________________________________________________________________________________________________________________________________________________
+
+
+ArrayList Vs LinkedList:
+
+1) ArrayList internally uses a dynamic array to store the elements.
+
+1) LinkedList internally uses a doubly linked list to store the elements.
+
+--------------------------------------------------------------------------------------
+
+2) Manipulation with ArrayList is slow because it internally uses an array. 
+	If any element is removed from the array, all the bits are shifted in memory.
+
+2)Manipulation with LinkedList is faster than ArrayList because it uses a 
+	doubly linked list, so no bit shifting is required in memory.
+
+---------------------------------------------------------------------------------------
+
+3) An ArrayList class can act as a list only because it implements List only.
+
+3)LinkedList class can act as a list and queue both because it implements List
+	 and Deque interfaces.
+
+--------------------------------------------------------------------------------------
+
+4) ArrayList is better for storing and accessing data.
+
+4)LinkedList is better for manipulating data.
+
+---------------------------------------------------------------------------------------
+
+5)ArrayList class implements a List interface. Therefore, this acts as a list.
+
+5)LinkedList class implements both the List interface and the Deque interface.
+	 Therefore, it can act as a list and a deque.
+
+---------------------------------------------------------------------------------------
+
+6)ArrayList class works better when the application demands storing the data 
+	and accessing it.
+
+6)LinkedList class works better when the application demands manipulation of the 
+	stored data.
+
+-----------------------------------------------------------------------------------------
+
+7)ArrayList is faster in storing and accessing data.
+
+7)LinkedList is faster in manipulation of data.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+____________________________________________________________________________________________________________________________________________________________________________________

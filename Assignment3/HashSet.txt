@@ -1,0 +1,41 @@
+HashSet : 
+	1.It is a special Collection that contains Unique Elements 
+	  and doesnot allow Duplication.
+	2.HashSet extends AbstractSet and implements the set in Interface.
+	3.HashSet allows only one null value.
+	4.It uses Hash Table to store data internallyand works on a 
+	 hashing principal.
+	5.HashSet only store the elements and not the key values 
+	  pairs like HashMap.
+	6.HashSet internally uses HashMap for storing the values
+		-Whenever the object is created for HashSet it internally creats
+	  	the object of HashMap.
+		-Beacuse in HashMap each key is Unique. 
+				public HashSet{
+					map = new HashMap<>();
+				  }
+
+--------------------------------------------------------------------------------------
+
+        How the elements are added in the HashSet?
+	
+	 In HashSet , from Add() method the put() from HashMap is called, where 
+		the value which has to be added in the set becomes Key and constant
+		objects
+		-PRESENT is used as a value.
+	
+	PRESENT?
+	    In HashSet PRESENT implementation is defined as 
+		private static void final object PRESENT = new Object();
+
+	
+	 Add() method implementation?
+		public boolean Add(E e){
+			returnMap.put(E,PRESENT)==null;
+		}
+
+	so here if you notice that, The add() method of HashSet
+	calls put() method of backing HashMap object.
+
+	-It passes the element as the key and a constant  present is
+	  stored at its value.

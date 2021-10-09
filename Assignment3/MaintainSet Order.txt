@@ -1,0 +1,18 @@
+Maintain an order in set?
+	
+	1. LinkedHashSet can retain the order of the collection.
+	   you can wrap your set using this implementation.
+	2. SortedSet implementation can be used for sorted order
+
+		Set myOrderedSet = new LinkedHashSet(mySet);
+
+	keep the insertion order: LinkedHashSet and CopyOnWriteArraySet
+	 (thread-safe)
+	keep the items sorted within the set: TreeSet, EnumSet 
+	(specific to enums) and ConcurrentSkipListSet 
+	(thread-safe)
+	does not keep the items in any specific order: HashSet (the one you tried)
+	 
+	-you can either sort the items first and then use any (LinkedHashSet or TreeSet).
+	-Or alternatively and more efficiently, you can just add unsorted data to a 
+	TreeSet which will take care of the sorting automatically.
