@@ -1,0 +1,30 @@
+
+1.What is root cause for OUT OF MEMORRY error?
+
+ java.lang.outofMemoryError is a runtime error in Java ,which occurs when the Java Virtual Machine (JVM) is unable to allocate
+ an object due to insufficient space in the Java heap.
+ The Java Garbage Collector (GC) cannot free up the space required for a new object, which causes a java.lang.OutOfMemoryError.
+ This error can also be thrown when the native memory is insufficient to support the loading of a Java class.
+ 
+What Causes java.lang.OutOfMemoryError
+A java.lang.OutOfMemoryError usually means that something is wrong in the application 
+- for example, the application code is referencing large objects for too long or trying to process large amounts of data at a time. 
+The problems could also exist in third-party libraries used within an application.
+The JVM's memory management scheme sets aside a portion of the heap memory to store newly allocated objects.
+Any referenced objects remain active in the heap throughout their lifespan (until their reference is closed) and occupy memory.
+When objects are no longer referenced, they become eligible for the GC to remove them and free up the occupied heap memory.
+
+The Java heap size is determined by two JVM attributes, which can be set when launching Java: 
+  1.Xms   2. Xmx
+ -Xms to set the initial heap size
+ -Xmx to set the maximum heap size
+Example:
+Public class outOfMemoryExample{
+Public static void main(Strings[] args){
+Intrget[] myArray = new Integer[1000*1000*1000];
+}
+}
+In this example, an Integer array with a very large size is attempted to be initialized. Because the Java heap is insufficient to allocate this array, it throws a java.lang.OutOfMemoryError: Java heap space
+A java.lang.OutOfMemoryError: Java heap space can also occur in applications that use finalizers excessively.
+-- If a class has a finalize() method, the GC does not clean up any objects of that class and they are instead queued for finalization, which occurs at a later stage
+

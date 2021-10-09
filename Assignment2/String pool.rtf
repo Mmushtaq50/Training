@@ -1,0 +1,10 @@
+5.String Pool?
+-	Sting is immutable in Java.
+- All Strings are stored in the String Pool (or String Intern Pool) that is allocated in the Java heap.
+-	String pool is an implementation of the String Interring Concept.
+-	String Interning is a method that stores only a copy of each distinct string literal
+-	The distinct values are stored in the String pool.
+-	String pool is an example of the Flyweight Design Pattern. 
+
+	First, we have created a string literal Python and it takes place in the pool. After that, the string Data Science is created, it also takes place in the pool. At last, again we have created the string Python. But at this time, JVM checks for the string and found that string literal is already present. Instead of taking a new instance in the String pool, it returns the reference of the pooled instance i.e. str1.
+	Similarly, when we use the new keyword to create the string literals, it also takes place in the String pool. We have created three strings literals Java, C++, and Data Science. We see that the string literals Java and C++ are the new ones. But the Data Science literal is already existing in the pool. At this time, JVM allocates space for the literal Data Science in Java Heap. Remember that all the String literals created with the new keyword take place in the Java heap, not in the String pool.
