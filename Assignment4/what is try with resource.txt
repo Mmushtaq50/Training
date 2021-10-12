@@ -1,0 +1,3 @@
+The try-with-resources statement ensures that each resource is closed at the end of the statement execution. 
+If we don't close the resources, it may constitute a resource leak and also the program could exhaust the resources
+ available to it. You can pass any object as a resource that implements java. lang

@@ -1,0 +1,41 @@
+The class at the top of the exception class hierarchy is the Throwable class, which is a direct subclass of the Object class.
+Throwable has two direct subclasses - Exception and Error.
+
+					
+					Object					
+					<class>
+					  -
+					  -
+					  -
+					  -
+					  -
+					  -
+		  --------------------Throwable--------------------			// Throwable<class>  extends object<class>
+		  -		       <class>			  -
+		  -						  -
+		  -						  -
+		  -						  -
+		  -						  -
+		Error					        Exception
+	       <class>						 <class>		// Both Error<class> and Exceptions<class>  extends Throwable<class>
+			
+
+
+
+Throwable class :
+		 1.Throwable class which is derived from Object class, 
+		 2.It is the top of exception hierarchy from which all exception classes are derived directly or indirectly.
+	         3.It is the root of all exception classes. 
+		 4.It is present in java.lang package.	
+		 5.Throwable class is the superclass of all exceptions in java.	
+		 6.This class has two subclasses: Error and Exception
+
+		 Error     : Error class is the subclass of Throwable class and a superclass of all the runtime error classes
+					It generally occurs if the system is not working properly or resource is not allocated properly.
+					  VirtualMachineError, StackOverFlowError, AssertionError, LinkageError, OutOfMmeoryError, etc
+					  are examples of error.	
+	
+		 Exception : Exception class is a subclass of Throwable class and a superclass of all the exception classes	
+				The exception class provides two constructors:
+					public Exception() (Default constructor)
+					public Exception(String message) (It takes a message string as argument)			

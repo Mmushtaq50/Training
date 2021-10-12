@@ -1,0 +1,39 @@
+Error:
+	1.Somthing that cannot be handled through program is known as Error.
+
+	2.Recovering from Error is not possible.
+
+	3.Errors are UnChecked type.
+
+	4.They are defined at java.lang.Error package
+		Ex -java.lang.StackOverFlowError
+		   -java.lang.outOfMemoryError
+
+	5.An Error "indicates serious problems that a reasonable application should not try to catch." 
+
+
+
+
+
+
+Exception: 
+	   1Event that occurs during the execution of the program that dispruts
+	 	or disturbs the normal flow of instructions.
+
+	   2.Recovering from exception is possible either by try catch block
+		or throwing exception back.
+
+	   3.Exception include both Checked and UnChecked type.
+
+	   4.They are defined at java.lang.Exception package
+		Ex -Checked
+			SQLException ,IOException
+		   -UnChecked
+			ArrayOutOfBoundException ,NullPointerException
+			Arthematic Exception
+	   5.An Exception "indicates conditions that a reasonable application might want to catch."
+
+In general,Exceptions are of two types
+	
+	1.Checked Exception   : Akas Compile Time Exception -Ex :UserDefined Exception.
+	2.UnChecked Exception : AKas Run TIme Exception     -Ex :I/O Exception ,Null pointer Exception ,OutOfBoundException.

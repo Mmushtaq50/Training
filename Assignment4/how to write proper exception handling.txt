@@ -1,0 +1,36 @@
+1.An exception should contain within its own member variables as many details as possible about precisely what happened;
+     for example, an IndexOutOfRangeException should contain the index value that was found to be invalid,
+      as well as the upper and lower values that were valid at the moment that the exception was thrown. 
+       This way, using reflection you can have a message automatically constructed which reads like
+	 this: IndexOutOfRangeException: index = -1;  min=0; 
+	  together with the stack trace, should be all the objective information that you 
+	   need in order to troubleshoot the problem 
+
+2. As we write code, we come across an erroneous situation for which we just want to quickly code a throw 
+    statement and proceed writing our code instead of having to interrupt what we are doing to go create a 
+     new exception class so that we can throw it right there.
+
+3.As a general rule, an exception should help developers pinpoint the cause by giving useful 
+   information (expected values, actual value, possible causes/solution, etc.).
+
+4.The Type of the Exception will decide which exception handler will get to look at it and the
+   properties defined on the Exception object will allow the handler to deal with it.
+
+Exception handling.
+try-catch block.
+Multiple catch blocks.
+nested try-catch.
+finally block.
+Flow Control in try-catch-finally.
+throw keyword.
+throws clause.
+
+by these key words we write exception handling 
+
+5.Clean Up Resources in a Finally Block or Use a Try-With-Resource Statement
+
+6. Throw Exceptions With Descriptive Messages
+
+7.Catch the Most Specific Exception First
+
+8.Don’t Catch Throwable

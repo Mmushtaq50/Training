@@ -1,0 +1,5 @@
+Exception handling ensures that the flow of the program doesn’t break when an exception occurs. 
+For example, if a program has bunch of statements and an exception occurs mid way after executing 
+certain statements then the statements after the exception will not execute and the program will terminate abruptly.
+ie,. program has 10 lines of code ,at line 5 there is an exception , by which lines 5 6 7 8 9 10 wiil not execute.
+By handling we make sure that all the statements execute and the flow of program doesn’t break.

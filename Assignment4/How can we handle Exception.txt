@@ -1,0 +1,45 @@
+Two things will happen when Exception occours
+ 
+	1.User will suggest to handle the exception using Try-Catch blocks.
+		Put the code you want to run in the try block, and any 
+		Exceptions that the code throws are caught by one or more catch blocks,
+		This method will catch any type of Java exceptions that get thrown. 
+
+		Case 1.
+		try {
+ 		      //block of code that can throw exceptions
+		 } catch (Exception ex) {
+  		     //Exception handler
+		 }
+
+
+		case 2.
+		try {
+		  //block of code that can throw exceptions
+			} catch (ExceptionType1 ex1) {
+  				// exception handler for ExceptionType1
+		} catch (ExceptionType2 ex2) {
+ 			 // Exception handler for ExceptionType2
+		}
+		In case 2
+		-A try block can be followed by one or more catch blocks, each
+		 specifying a different type.
+		-The first catch block that handles the exception class or one 
+		 of its superclasses will be executed. So, make sure to catch the
+		 most specific class first.
+		-If an exception occurs in the try block, the exception is thrown 
+		 to the first catch block. If not, the Java exception passes down 
+		 to the second catch statement. This continues until the exception
+		 either is caught or falls through all catches.
+
+
+
+	2.Unable to handle exception use throwable<class> Exception.
+
+		-Using Throwable class, you can also create your own custom exceptions.
+
+		if(age < 18){
+			throw new ArthematicException("Person is not aeligible to vote");
+		}else{
+			system.out.println("Person is eligible to vote");
+		}
