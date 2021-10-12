@@ -1,0 +1,2 @@
+If an exception occurs inside a method, the method creates an Exception Object and sends
+it off to the run-time system. Now, the JVM searches for an exception handler to handle the exception.

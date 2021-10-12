@@ -1,0 +1,51 @@
+Both throw and throws are concepts of exception handling
+
+	throw:
+		1.throw keyword is used to explicitly(done by programmer) throw an exception within a method or block of code.
+		2.we can only propagate unchecked exception i.e.,the checked exception cannot be propagated using throw only.
+		3.throw is used within the method.
+		4.We are allowed to throw only one exception at a time i.e. we cannot throw multiple exceptions.
+
+				public class TestThrow {  
+  				  public static void checkNum(int num) {    //defining in a method  
+      					  if (num < 1) {  
+           					 throw new ArithmeticException("Number is negative,cannot calculate square");  
+       					 }else{  
+            					System.out.println("Square of " + num + " is " + (num*num));  
+       						}  
+   				 }    
+  				  public static void main(String[] args) {  
+            				TestThrow obj = new TestThrow();  
+            				obj.checkNum(-3);  
+           				 System.out.println("Rest of the code..");  
+   					 }  
+					}  
+
+
+
+	throws:
+		1.throws keyword is used to declare which exceptions can be thrown from a method
+		2.we can declare both checked and unchecked exceptions. However,the throws keyword can be used to propagate 
+		 checked exceptions only.
+		3.throws is used with the method signature.
+		4.We can declare multiple exceptions using throws keyword that can be thrown by the method.
+			 For example, main() throws IOException, SQLException.
+
+					public class TestThrows {  
+  					  public static int divideNum(int m, int n) throws ArithmeticException {   //defining a method  
+      						 int div = m / n;  
+       						 return div;  
+  					  }		
+	    
+   					 public static void main(String[] args) {   			//main method
+      					  TestThrows obj = new TestThrows();  
+        					try {  
+          					  System.out.println(obj.divideNum(45, 0));  
+       						 }  
+        				catch (ArithmeticException e){  
+           				 System.out.println("\nNumber cannot be divided by 0");  
+       					 }  
+          
+     					   System.out.println("Rest of the code..");  
+   						 }  
+					}  

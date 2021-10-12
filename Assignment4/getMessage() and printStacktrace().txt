@@ -1,0 +1,35 @@
+	
+getMessage():
+		The getMessage() method of Throwable class is used to return a detailed message of the
+		Throwable object which can also be null. One can use this method to get the detail
+		message of exception as a string value. Syntax: public String getMessage()
+
+					public static void main(String[] args) throws Exception {
+  
+       						 try{
+           						divide(2, 0);				// divide the numbers
+      							  }
+       						 catch (ArithmeticException e) {
+         					   System.out.println("Message String = "
+                              			 + e.getMessage());
+        						}
+  						  }	
+
+
+ printStackTrace(): 
+		    The printStackTrace() method of Java. lang. Throwable class used to print this Throwable
+			along with other details like class name and line number where the exception occurred means
+			its backtrace. This method prints a stack trace for this Throwable object on the standard error output stream.
+			
+		    The Stack Trace will tell the Developer where the code broke; the message should, again, indicate what went wrong.
+
+						public static void main(String[] args) throws Exception {
+  
+       						 try{
+           						 testException1();
+      							  }
+						catch (Throwable e) {
+          						  e.printStackTrace();			 // print stack trace
+        							}			
+    							}
+  

@@ -1,0 +1,61 @@
+You can create your own exceptions in Java and they are known as User Defined Exceptions or Custom Exceptions.
+
+
+Custom unChecked exception - Runtime Exceptions
+	If you simply change the class that your custom exception inherits to RuntimeException it will be thrown at run time
+
+		class NotProperNameException extends RuntimeException {
+		   NotProperNameException(String msg){
+      			super(msg);
+   		   }
+		}
+ 
+Checked Exceptions - Compile time Exceptions
+        These exceptions can be handled by the try-catch block otherwise the program will give a compilation error.
+	ClassNotFoundException, IOException, SQLException etc are the examples of the checked exceptions.
+		
+		try{
+    		       // DoSomething();
+		}catch(Exception e){ 
+    		      // Throw checked exception
+		}finally{
+   		     // Throw unchecked exception
+		}
+
+	Example:
+		public class TestClass {
+			public static void main(String[] args) {
+    				TestClass c = new TestClass();
+    				try {
+    		    			// Whatever
+   		 		} catch (Exception e) {
+       		 			throw new FileNotFoundException(); 
+    				} finally {
+       					 throw new NullPointerException();
+    					}
+				}
+				}
+
+			(OR)
+
+	public class TestClass {
+		public static void main(String[] args) {
+    			TestClass c = new TestClass();
+   			 try {
+      					  //Whatever
+    			} catch (Exception e) {
+       				  c.m1(); 
+             						// throw new FileNotFoundException(); or just throw it here
+  			  } finally {
+       				 c.m2();
+    			}
+		}
+
+		public void m1() throws IOException {
+  			  throw new FileNotFoundException();
+			}
+
+		public void m2() throws RuntimeException {
+    			throw new NullPointerException();
+		}
+		}
