@@ -1,7 +1,17 @@
-What are the changes done in java 8 for memory utilization?
+﻿What are the changes done in java 8 for memory utilization?
 
 PermGen--(JDK-7)
 Metaspace--(JDK-8)
+
+-Where java 7 is the part of Java Heap, where maximum size can be configured by -XX:MaxPremSize
+
+-Where in java 8 which is the part of Native Memory (Process Memory)
+Which can be limited only by Host Operating system.
+The Maximun size can be configured by -XX:MaxMetaSpaceSize
+
+Now in java 8 there is no need to monitpr the Java Heap, instead we should monitor the metaSpace by keeping an eye on Process Size by using OS (Ex: Task Manager)
+-Can also use jmap command to print memory statistics for any java 8 application.	
+
 
 
 PermGen space situation (JDK-7)
@@ -12,13 +22,14 @@ Metaspace memory allocation model (JDK_8)
 •	Most allocations for the class metadata are now allocated out of native memory.
 •	The classes that were used to describe class metadata have been removed.
 
-Metaspace capacity
+       Metaspace capacity
 •	By default class metadata allocation is limited by the amount of available native memory (capacity will of course depend if you use a 32-bit JVM vs. 64-bit along with OS virtual memory availability).
 •	A new flag is available (MaxMetaspaceSize), allowing you to limit the amount of native memory used for class metadata. If you don’t specify this flag, the Metaspace will dynamically re-size depending of the application demand at runtime.
 
-Metaspace garbage collection
+       Metaspace garbage collection
 •	Garbage collection of the dead classes and class loaders is triggered once the class metadata usage reaches the “MaxMetaspaceSize”.
 •	Proper monitoring & tuning of the Metaspace will obviously be required in order to limit the frequency or delay of such garbage collections. Excessive Metaspace garbage collections may be a symptom of classes, classloaders memory leak or inadequate sizing for your application.
+
 Java heap space impact
 •	Some miscellaneous data has been moved to the Java heap space. This means you may observe an increase of the Java heap space following a future JDK 8 upgrade.
 
