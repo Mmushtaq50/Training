@@ -12,7 +12,7 @@ Referenced objects are those who have still active references within the applica
 The garbage collector removes unreferenced objects periodically, but it never collects the objects that 
 are still being referenced. This is where memory leaks can occur:
 
-Symptoms od memory leak:
+Symptoms of memory leak:
 Severe performance degradation when the application is continuously running for a long time
 OutOfMemoryError heap error in the application
 Spontaneous and strange application crashes
@@ -39,7 +39,8 @@ When using singletons, rely upon an implementation that lazily loads the object 
 	A few examples include database connections, input streams, and session objects.
 
 	Forgetting to close these resources can block the memory, thus keeping them out of the reach of GC. 
-	This can even happen in case of an exception that prevents the program execution from reaching the statement that's handling the code to close these resources.
+	This can even happen in case of an exception that prevents the program execution from reaching the 
+	statement that's handling the code to close these resources.
 
 	In either case, the open connection left from resources consumes memory, and if we don't deal with them, 
 	they can deteriorate performance and may even result in OutOfMemoryError.

@@ -57,19 +57,19 @@ public class DimondStarPattern {
 						Upper Traingle
  
  i		j		s			
- 1		1		4			*
+ 1		1		4			    *
  2		3		3		     *	*  *
  3		5		2		  *  *  *  *  *
- 4		7		1              *  *  *  *  *  *  *
+ 4		7		1      *  *  *  *  *  *  *
  
- 5		9		0	    *  *  *  *  *  *  *  *  *    // This line i=5 is mid ,which has no spaces and line is filled with stars
+ 5		9		0   *  *  *  *  *  *  *  *  *    // This line i=5 is mid ,which has no spaces and line is filled with stars
 
 
 
- 1		7		1	       *  *  *  *  *  *  *
- 2     		5		2		  *  *  *  *  *  
- 3		3		3		     *  *  *
- 4		1		4			*
+ 1		7		1	  *  *  *  *  *  *  *
+ 2      5		2        *  *  *  *  *  
+ 3		3		3		    *  *  *
+ 4		1		4			   *
 						Lower Traingle
 						
 	*/					
