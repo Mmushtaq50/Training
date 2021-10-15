@@ -1,6 +1,6 @@
 package Test1;
 
-//write a method that recives a character array and returs the no of symbols in ana array
+//write a method that recives a character array and returs the no of symbols in an array
 
 public class program1 {
 
