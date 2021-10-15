@@ -1,5 +1,7 @@
 package Test1;
 
+//write a method that recives ana array and shufels ana array randomly 
+
 import java.util.Arrays;
 import java.util.Random;
 
