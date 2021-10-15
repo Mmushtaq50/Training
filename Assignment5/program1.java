@@ -1,5 +1,7 @@
 package Test1;
 
+//write a method that recives a character array and returs the no of symbols in ana array
+
 public class program1 {
 
 	public static void main(String[] args) {
