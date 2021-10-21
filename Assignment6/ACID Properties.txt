@@ -1,0 +1,28 @@
+
+JDBC Transaction ACID Property:
+
+	A Transaction is a unit of work performed on the database and treated in a
+		reliable way independent of other transaction.
+
+	In database transaction processing ACID property refers to the
+		 Atomicity, Consistency, Isolation, Durability respectively.
+
+	Atomicity- This property says that all the changes to the data is performed if 
+		   they are single operation. For example suppose in a bank application if 
+		   a fund transfer from one account to another account the atomicity property 
+		   ensures that is a debit is made successfully in one account the corresponding
+		   credit would be made in other account.
+
+	Consistency- The consistency property of transaction says that the data remains in the 
+		     consistence state when the transaction starts and ends. for example suppose in 
+		     the same bank account, the fund transfer from one account to another account, the
+		     consistency property ensures that the total value(sum of both account ) value 
+		     remains the same after the transaction ends.
+
+	Isolation- This property says that, the intermediate state of transaction are hidden/ invisible to
+		   another transaction process. Suppose in the the bank application, the isolation  property
+		   ensures that the fund transfer  from one account to another account, the transaction sees 
+	           the fund transfer in one account or the other account.
+
+	Durability- The Durability says that when the transaction is completed successfully, the changing
+		    to the data is persist and is not un-done, even in the event of system failure.

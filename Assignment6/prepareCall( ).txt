@@ -1,0 +1,9 @@
+What is prepareCall()?
+You can create an object of the CallableStatement (interface) using the prepareCall() method 
+of the Connection interface. This method accepts a string variable representing a query to call
+ the stored procedure and returns a CallableStatement object.
+
+What is the use of prepareCall():
+CallableStatement interface is used to call the stored procedures and functions. 
+ Suppose you need the get the age of the employee based on the date of birth, you may create a 
+function that receives date as the input and returns age of the employee as the output.

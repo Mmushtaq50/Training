@@ -1,0 +1,88 @@
+JDBC Drivers:	
+	JDBC Driver is a software component that enables java application to interact 
+		with the database. 
+
+		There are 4 types of JDBC drivers:
+
+			1.JDBC-ODBC bridge driver
+
+			2.Native-API driver (partially java driver)
+
+			3.Network Protocol driver (fully java driver)
+
+			4.Thin driver (fully java driver)
+
+		
+			 public static void main(String args[]) throws SQLException {
+
+      											//Registering the Driver
+    			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+
+
+     			 								//Getting the connection
+     			String mysqlUrl = "jdbc:mysql://localhost/sampleDB";
+
+
+    			Connection con = DriverManager.getConnection(mysqlUrl, "root", "password");
+      			    System.out.println("Connection established......");
+
+
+     											//Creating the Statement
+     			Statement stmt = con.createStatement();
+
+			}
+
+
+		1) JDBC-ODBC bridge driver:
+
+			The JDBC-ODBC bridge driver uses ODBC driver to connect to the database. 
+			The JDBC-ODBC bridge driver converts JDBC method calls into the ODBC function calls.
+			 This is now discouraged because of thin driver.
+
+			-In Java 8, the JDBC-ODBC Bridge has been removed.
+				Oracle recommends that you use JDBC drivers provided by the vendor
+			 	of your database instead of the JDBC-ODBC Bridge.
+
+			Advantages:
+				1.easy to use.
+				2.can be easily connected to any database.
+
+		2) Native-API driver:
+
+			The Native API driver uses the client-side libraries of the database. 
+			The driver converts JDBC method calls into native calls of the database API.
+			 It is not written entirely in java.
+
+			Advantage:
+			performance upgraded than JDBC-ODBC bridge driver.
+
+
+		3) Network Protocol driver
+
+			The Network Protocol driver uses middleware (application server) that converts
+				 JDBC calls directly or indirectly into the vendor-specific database protocol. 
+				It is fully written in java.
+
+
+			Advantage:
+				No client side library is required because of application server that can perform
+				 many tasks like auditing, load balancing, logging etc.
+
+		4) Thin driver
+			The thin driver converts JDBC calls directly into the vendor-specific database protocol.
+			 That is why it is known as thin driver. It is fully written in Java language.
+
+			Advantage:
+				Better performance than all other drivers.
+				No software is required at client side or server side.
+
+
+
+		There are 5 steps to connect any java application with the database using JDBC. 
+			These steps are as follows:
+
+			1.Register the Driver class
+			2.Create connection
+			3.Create statement
+			4.Execute queries
+			5.Close connection

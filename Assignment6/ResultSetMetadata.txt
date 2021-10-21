@@ -1,0 +1,40 @@
+ResultSetMetaData:
+
+	1.ResultSetMetaData is an interface in java. sql package of JDBC API
+		which is used to get the metadata about a ResultSet object.
+
+	2.This object will have all the meta data about a ResultSet 
+		object like schema name, table name, number of columns, 
+		column name, datatype of a column etc
+
+	3.This interface provides quick overview about a ResultSet object
+		 like number of columns, column name, data type of a column etc.
+
+
+	How To Get ResultSetMetaData Object?
+	
+		1.getMetaData() method interface returns ResultSetMetaData object
+			 associated with a ResultSet object.
+
+		2.getMetaData() is of java.sql.ResultSet object.
+	
+	Syntax:
+		ResultSetMetaData rsmd = rs.getMetaData();
+		
+		Where ‘rs‘ is a reference to ResultSet object.
+
+	
+	Important Methods Of ResultSetMetaData Interface :
+
+
+			Method Name									Description
+
+		   int getColumnCount() throws SQLException				Returns the number of columns in a ResultSet.
+
+		String getColumnName(int column) throws SQLException			Returns the column name.
+
+		String getColumnTypeName(int column) throws SQLException		Returns the database specific datatype of the column.
+
+		String getTableName(int column) throws SQLException			Returns the column’s table name.
+
+		String getSchemaName(int column) throws SQLException			Returns the name of the schema of the column’s table.

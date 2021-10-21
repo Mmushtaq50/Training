@@ -1,0 +1,46 @@
+SQL Exceptions:
+	
+	-When JDBC encounters an error during an interaction with a data source, it throws 
+		an instance of SQLException as opposed to Exception .
+	
+	-An exception that provides information on a database access error or other errors.
+
+	-Each SQLException provides several kinds of information: a string describing the error. 
+		 a "SQLstate" string, which follows either the XOPEN SQLstate 
+		conventions or the SQL:2003 conventions.
+
+	-An integer error code that is specific to each vendor. Normally this will be the actual
+	     error code returned by the underlying database.
+		A chain to a next Exception. This can be used to provide additional error information.
+		the causal relationship, if any for this SQLException.
+
+	-To handle exception in Sql Server we have TRY.. CATCH blocks. 
+	-We put T-SQL statements in TRY block and to handle exception we write code in CATCH block. 
+	-If there is an error in code within TRY block then the control will automatically 
+		jump to the corresponding CATCH blocks.
+
+
+		
+		SQLException(String reason, String SQLState, int vendorCode)
+			Constructs a SQLException object with a given reason, SQLState and vendorCode.
+
+		SQLException(String reason, String SQLState)
+			Constructs a SQLException object with a given reason and SQLState.
+
+		SQLException(String reason)
+			Constructs a SQLException object with a given reason.
+
+		SQLException()
+			Constructs a SQLException object.
+
+		SQLException(Throwable cause)
+			Constructs a SQLException object with a given cause.
+
+		SQLException(String reason, Throwable cause)
+			Constructs a SQLException object with a given reason and cause.
+
+		SQLException(String reason, String sqlState, Throwable cause)
+			Constructs a SQLException object with a given reason, SQLState and cause.
+
+		SQLException(String reason, String sqlState, int vendorCode, Throwable cause)
+			Constructs a SQLException object with a given reason, SQLState, vendorCode and cause.

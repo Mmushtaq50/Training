@@ -1,0 +1,34 @@
+Pagination in JDBC:	
+
+	-The method of distributing a single list into multiple pages is known as Pagination.
+ 	 Paging refers to showing your query result on multiple pages instead of a single page
+
+	-Pagination is a technique for splitting a list of multiple records into sublists.
+	 For example, you search with a keyword on Google and receives tens of thousands of results. 
+	 However, every Google page displays only 10 results for you. Other results will show on next pages.
+
+	Using OFFSET and LIMIT is the easy way to write pagination into database queries. 
+
+	Pagination is a common application job and its implementation has a major 
+	impact on the customer experience.
+
+	
+		How do I get pagination in SQL?
+
+			Pagination query in SQL Server
+
+			DECLARE @PageNumber AS INT.
+
+			DECLARE @RowsOfPage AS INT.
+
+			SET @PageNumber=2.
+
+			SET @RowsOfPage=4.
+
+			SELECT FruitName,Price FROM SampleFruits.
+
+			ORDER BY Price.
+
+			OFFSET (@PageNumber-1)*@RowsOfPage ROWS.
+
+			FETCH NEXT @RowsOfPage ROWS ONLY.

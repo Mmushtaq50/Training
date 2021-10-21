@@ -1,0 +1,13 @@
+execute and executeQuery
+
+	To execute a query, call an execute method from Statement such as the following:
+
+		execute : Returns true if the first object that the query returns is a ResultSet object. ...
+
+		executeQuery : Returns one ResultSet object.
+			       This method is used to execute statements that returns tabular 
+				data (example select). It returns an object of the class ResultSet
+
+		executeUpdate : Returns an integer representing the number of rows affected by the SQL statement.
+					This method is used to execute statements such as insert, update, delete. 
+					It returns an integer value representing the number of rows affected.
