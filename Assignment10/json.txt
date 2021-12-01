@@ -1,0 +1,78 @@
+Json :	JavaScript Object Notation
+	
+	1.It is just a simple formate, in which you can transfer data from client to server 
+	  and from server to client as well. 
+		-When we want to post data then also we can use JSON
+
+	2.JSON is primarily a language that allows serializing javascript objects into strings.
+
+	3.   can convert object into Json - server side
+	     can covert  Json into object - client side 
+
+		-(which will send the state of an object but not an object) (rest:representational state transfer) Rest_API
+
+		-By using some libraries (GSON and jackson) we can convert java code into Json
+
+	2.JSON is primarily a language that allows serializing javascript objects into strings.
+
+	Example: 
+		-Imagine you want to create a weather report App,(Inorder to do that we need some
+		   data about at which place the weather report is,like weather report in US exapmle)
+
+		 -So there are some Web services available on internet who are ready to give you that data Resources
+		  All you need to do is call  and connect them 
+
+		-So there is an Rest API(Somthing that will connect the client with the server)
+		so by using the servlet the connection establishment is happening
+		  genertating the servlet  
+					Servlets is a javaSide component that will accept the HTTP servlet Request
+ 					 and generate HTTP servlet Response. (HTTP = WebPages)
+
+		-But the problem arises here, which is, the client dont want the response in HTTP(Web pages) instead he
+		  need the response in the form of data  (Example : data about weather report)
+		
+		-So client will say to servlet i dont want webPage i need  Resource Data
+	           ,Servlet will say ok i can give you the data in two formates either by 
+		    JSON or  XML (which will send the state of an object but not an object)
+
+		-That why it is called Rest_API(rest:representational state transfer) Rest_API
+		now that state of an object can be send using JSON or XMl
+	
+		-By doing this, client is gettig Data resource  in the from servlet via: JSON / XML 
+			we use CURD operation or HTTP methods in order to manipulate with data resource
+
+		-when it comes to Cimate report APP ,dosent matter which APP/wesite you are creating or what requirment we have 
+		 we do one simple thing ie: we do CURD operations
+						   -we create the resource
+						   -we read the resource
+						   -we update the resource
+						   -we delete the resource
+
+		-so instead of using the CURD operations, we also have HTTP methods
+								- PUT  method
+								- POST method 
+								- PULL method
+								- DELETE method
+
+Note: 1.Before json developers used to work on XML(like when you want to send data from server to client) 
+	 ,infact still some of them use XML, but then json is trying to overide the XMl features so it has become a standered format.
+
+	JSON:
+		{"country";{
+			"city";{
+			 "temp":33,
+			 "humidity":40
+				}
+			}
+
+	XML:
+		<country>
+			<city>
+				<temp>33</temp>
+				<humidity>40</humidity>
+			</city>
+		</country>
+		
+
+      2.In javaScript we create an array Object which is basically an JSON Object.
+	

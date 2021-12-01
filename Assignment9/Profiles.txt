@@ -1,0 +1,55 @@
+   
+
+
+  An application run on many different environments. For example, Dev, QA, Test, Stage, Production etc.
+
+
+  Spring Profiles helps in dividing your application configurations, and make them available 
+	only in certain environments. ﻿ 
+	
+	Each profile need one separate .properties file
+	you can have multiple profiles in one single .yml file
+	
+
+	1.An application created by the User runs or have many different enviroments(Each evnironment has their specific properties),
+		so inorder to run the application in an certain enviroment and also to configure 
+		your applications we make use of Spring Profiles.
+
+		
+		@Configuration
+		@Profile("")		//Environment
+		public class ProductionConfiguration {
+
+		}
+
+		Name Convention for creating profiles  :  application-<profileName>.extn
+
+		
+		@Value("${spring.profiles.active}")
+		private String activeProfile;
+	
+
+		--use   spring.profiles.active  Environment property to specify which profiles are active. 
+		--The   spring.profiles.include property can be used to unconditionally add active profiles.
+
+		--Tests make it very easy to specify what profiles are active using the @ActiveProfile annotation to enable specific profiles:
+
+		--@ActiveProfiles("dev")
+
+<profiles>
+    <profile>
+        <id>dev</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+            <spring.profiles.active>dev</spring.profiles.active>
+        </properties>
+    </profile>
+    <profile>
+        <id>prod</id>
+        <properties>
+            <spring.profiles.active>prod</spring.profiles.active>
+        </properties>
+    </profile>
+</profiles>

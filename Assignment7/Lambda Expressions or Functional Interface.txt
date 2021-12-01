@@ -1,0 +1,48 @@
+//lambda expressions
+
+//()->{​​​​​}​​​​​
+
+//single line no need to use curly brackets () ->
+
+//multiple line logic in curly brackets () ->{}
+
+//if different data types need to specify the type in signature
+
+//same datatype no need to mention in param signature
+
+_____________________________________________________________________________________________________________________________
+
+Functional Interface :
+	
+	The Interface which has only one method instance or one Abstract class .
+
+	@functional interface - annotation is used to craete the Functional Interface
+
+pre-defined Functional Interface:
+	runnable 
+_____________________________________________________________________________________________________________________________
+
+
+Runnable Interface:
+The runnable interface has an undefined method run() with void as return type, and
+	 it takes in no arguments. The method summary of the run() method is given below-
+
+Method	Description
+public void run()	This method takes in no arguments. When the object of a class implementing Runnable class
+			 is used to create a thread, then the run method is invoked in the thread which executes separately.
+
+/*	Create a class that implements Runnable.
+  	Provide a run method in the Runnable class.
+  	Create an instance of the Thread class and pass your Runnable object to its constructor as a parameter. ...
+  	Call the Thread object's start method. 										*/
+
+_____________________________________________________________________________________________________________________________
+
+Stream Api:
+
+1.works on collection
+2.It will provide additional Api's to perform Additional actions
+
+
+consumer will use : foreach
+predicate will use : filter

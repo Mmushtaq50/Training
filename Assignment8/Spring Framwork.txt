@@ -1,0 +1,60 @@
+Framework:
+
+	  contains pre-written code.(on the top of that developers can write their code)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Spring Framework:
+
+	 Spring is a powerfull Open-Source,Application Framework used
+	  for Enterprise application development.
+
+	  Advantages:
+		1.Light-Weighted and Loosely coupled.
+		2.preDefined Tamplets-Faster Development.
+		3.Easy to Test.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Important Spring Modules:
+
+	1.Spring Context : For Dependency Injection.
+	2.Spring MVC	 : Model View Controller implementation for creating web app.
+	3.Spring Web Module: For creating Web Applications
+	4.Spring DAO	 : for DataBAse operations using DAO patterns
+	5.Spring JDBC	 : for JDBC and DataSource support.
+	6.Spring ORM	 : for ORM tools support such as Hibernate.
+	7.Spring AOP 	 : for Aspect oriented Programming.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+What is Spring MVC?
+
+	Spring MVC FrameWork provides Model-View-Controller architectur to develop flexible 
+	and loosely coupled Web Applications.
+	
+	The MODEL- Application Data(POJO class).
+	The VIEW - HTML page seen by the End User.
+	the CONTROLLER - Responsible for processing the user Request and building model 
+			and passes it to the view of renderring.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+What is Dispatcher Servlet / Front Controller?
+   
+ 	Dispatcher Servlet is a front controller that handles all the incomming HTTP request 
+		and send back the response to client.
+
+	   Req				------------->   CONTROLLER
+	  --------->
+CLIENT	              DISPATCHER_SERVLET                VIEW_RESOLVER
+	 <----------							
+	    Resp			 <-------------     VIEW 
+							   
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Spring IOC container and its Advantages?
+
+	1.Spring IOC (Inversion of Control) is a core of a Spring Framework.	
+	2.The Container will read the configurations files and based on that it will 
+		create and store the Objects and manage it.
+
+	Advantages: 
+	
+	1.Developers can concentrate on bussiness logic since Object creation and managing
+		are handled by IOC container. 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ build tool : it is used for createing pacakage for your application.
+		1.JAR:Java Archive  2.WAR:Web Archive

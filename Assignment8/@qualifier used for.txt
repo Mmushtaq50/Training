@@ -1,0 +1,4 @@
+The @Qualifier annotation is used to resolve the autowiring conflict,
+	 when there are multiple beans of same type. The @Qualifier annotation can be used on any
+	 class annotated with @Component or on methods annotated with @Bean .
+	 This annotation can also be applied on constructor arguments or method parameters.

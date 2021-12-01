@@ -1,0 +1,50 @@
+
+
+1. scriptlet tag - to write java logic in jsp service method
+    <%
+    
+    %>
+---------------------------------------------------------------------------   
+2. declaration tag - jsp init
+    <%!
+    
+    
+    %>
+-------------------------------------------------------------------------   
+3. expression tag - sysout
+
+ 
+
+    <%= string
+    %>
+-----------------------------------------------------------------------
+4. Directive tag - page importing the packages
+
+ 
+
+    <%@
+    
+    %>
+    
+    
+    <%@page import="java.sql.Connection"%>
+    
+    include 
+    <%@include file=""
+    %>
+    
+    taglib directive-to create custome components 
+    
+    
+    Java server pages tag library
+    <%@taglib prefix and uri
+    
+    %>
+
+
+
+---------------------------------------------------------------------------------------------
+
+
+
+

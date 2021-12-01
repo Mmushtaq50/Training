@@ -1,0 +1,26 @@
+JSON Array:
+	
+	JSON Array is a list of items surrounded in square brackets ([]). 
+	Each item in the array is separated by a comma. 
+	The array index begins with 0.
+	The square brackets [...] are used to declare JSON array.
+	JSON array are ordered list of values.
+	
+	-JSON array are used to store a grouping of like items, while object
+	  are used to contain grouping of different properties for a single item.
+
+	- JSON is primarily a language that allows serializing javascript objects into strings.
+	-can convert object into Json on server side and on client side we can convert  Json into object(State of an Object).
+		-(which will send the state of an object but not an object) (rest:representational state transfer) Rest_API
+
+	-  int size = exampleList. size(); String[] stringArray = exampleList. toArray(new String[size]);
+	    This will convert our JSON array into a String array.
+	 first,
+	  a)Let's start by creating a List. ...
+	  b)Adding JSON array data into the List. ...
+	  c)Getting String array as output
+
+	-We can also add a JSONArray to JSONObject. 
+	 We need to add a few items to an ArrayList first and pass this list to 
+	 the put() method of JSONArray class and finally add this
+	 array to JSONObject using the put() method.

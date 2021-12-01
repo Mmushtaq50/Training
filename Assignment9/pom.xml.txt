@@ -1,0 +1,15 @@
+
+pom.xml - project object model
+
+	-pom.xml file allows us to add, remove, manage dependencies 
+	 and versions from one single location.
+	
+	- It is an XML file that contains information about the project and configuration details used by Maven to build the project.
+
+	-Other information such as the project version, description, developers, mailing lists and such can also be specified.
+    
+	-The minimum requirement for a POM are the following:
+	 project root
+	 modelVersion - should be set to 4.0.0
+	 artifactId - the id of the artifact (project)
+	 version - the version of the artifact under the specified group

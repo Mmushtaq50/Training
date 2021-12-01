@@ -1,0 +1,45 @@
+Response Body :
+
+		@ResponseBody is an annotation, indicates that the return value 
+		 of a method will be serialized into the body of the HTTP response.	
+	
+		1.Basicall we are checking response body
+ 		   to verify if request matches with response.
+		2.In the response we are verifying
+		   (body, status code, header, response time,
+		   test structure of json against the given jsonSchema)
+
+	3.The REST API sends a response header and response body in JSON format
+	  with information about the success or failure of the REST API call.
+	
+	4.The response header can contain the following information:
+		server
+		content-type
+		content-language
+		content-length
+		date
+		connection
+		transfer-encoding
+		severity
+		errorCode
+		description
+		logFile
+
+	5.The response body can contain information about the output and additional output ports.
+	 - If the output type was file, the response body contains a path to the output.
+	 - If the output type was buffer, the response body contains the buffer contents. 
+	  -The response body can also contain a success or failure code and message
+
+	
+	Response Entity:
+		
+		1.ResponseEntity represents the whole HTTP response: status code, headers, and body.
+		- As a result, we can use it to fully configure the HTTP response.
+	
+		2.ResponseEntity<> is a generic class with a type parameter, you can 
+		  specify what type of object to be serialized into the response body.
+
+		3.If we want to use it, we have to return it from the endpoint
+
+		4.ResponseEntity provides two nested builder interfaces: HeadersBuilder and
+		  its subinterface, BodyBuilder. Therefore, we can access their capabilities through the static methods of ResponseEntity

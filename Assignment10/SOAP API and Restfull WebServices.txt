@@ -1,0 +1,38 @@
+Soap_API : (Simple Object Access Protocol_Application Programm Interface)
+	
+	-It's a messaging protocol for interchanging data in a decentralized and distributed environment.
+	  SOAP can work with any application layer protocol, such as HTTP, SMTP, TCP, or UDP.
+	- SOAP based APIs are designed to create, recover, update and delete records like accounts, passwords, leads, and custom objects.
+
+	
+	 Rest_API vs Soap_API 
+
+	1.REST APIs uses multiple standards like HTTP, JSON, URL, and XML
+	  while SOAP APIs is largely based on HTTP and XML.
+
+	2.The ways both APIs exposes the business logics are also different. 
+	  REST API takes advantage of URL exposure like @path("/WeatherService") 
+	   while SOAP API use of services interfaces like @WebService.
+
+	3.REST API uses Web Application Description Language, and
+	 SOAP API used Web Services Description language for describing
+	  the functionalities being offered by web services.
+
+	4.REST APIs are more convenient with JavaScript and can be implemented easily as well.
+	  SOAP APIs are also convenient with JavaScript but don't support for greater implementation.
+	
+
+
+Restfull WebServices :
+	
+			-Restful Web Services is a lightweight, maintainable, and scalable
+			  service that is built on the REST architecture.
+			-Web Service, expose API from your application in a secure, uniform, stateless manner
+			  to the calling client. The calling client can perform predefined operations using the Restful service. 			
+
+		 1.REST stands for Representational State Transfer
+		 2.RESTful is referred for web services written by applying 
+		 3.REST architectural concept.
+		 4.In RESTful, web service http methods like GET, POST, PUT, DELETE 
+		   can be used to perform CRUD operations.
+		5.CRUD = Create : Read : Update : Delete

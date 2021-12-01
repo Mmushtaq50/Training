@@ -1,0 +1,32 @@
+IoC : Inversion of Control
+
+	1.Spring IoC Container is the core of Spring Framework. 
+
+	  -It creates the Objects, configures and assembles and inject their 
+	   dependencies, manages their entire life cycle.
+
+	2.It gets the information about the objects from a configuration file(XML) or java Annotations and
+		these objects are called Beans.
+
+	3.The Spring IoC container uses the dependency Injection (DI) to manage the components 
+	  and make up the application.
+
+	
+
+	4.In general IoC containers are of 2 types
+	    a)BeanFactory container(old)       	 && Will not support Annotations		
+	    b)ApplicationContext container(New)  && supports Annotations.
+
+-------------------------------------------------------------------------------------------------------------------------------
+Dependency Injection:
+
+	1.when two class are tightly coupled ,then dont create instance of child class 
+	  inside parent , instead the IOC container will take care of object craetion and do setting via 
+	  constructor injection or setter injection.
+
+	2.Dependency injection is basically providing the objects that an object needs 
+	  (its dependencies) instead of having it construct them itself. 
+	
+		- dependency injection is a technique in which an object receives other objects that it depends on.
+		- Typically, the receiving object is called a client and the passed-in object is called a service. 
+		- The code that passes the service to the client is called the injector.

@@ -1,0 +1,19 @@
+1.@Transient annotation in JPA or Hibernate is used to indicate that a field is not to
+  be persisted or ignore fields to save in the database.
+
+  -used to mark a field to be transient for the mapping framework, which means the
+    field marked with @Transient is ignored by mapping framework and the field not
+     mapped to any database column (in RDBMS) or Document property (in NOSQL). 
+
+2.@Transient exist in javax. persistence package. 
+   It is used to annotate a property or field of an entity class, mapped superclass, or embeddable class.
+
+3.transient is a variables modifier used in serialization. 
+  At the time of serialization, if we don't want to save value of a particular variable in a 
+  file, then we use transient keyword. When JVM comes across transient keyword, it ignores 
+   original value of the variable and save default value of that variable data type
+
+
+	
+	Note: Persistent means that the object has been saved to the database 
+	       whereas transient means that it hasn't been saved yet.

@@ -1,0 +1,6 @@
+1. what is the difference between maven and gradle
+2. what is difference between yaml and properties file
+3. what is profiles in spring boot
+4. difference between internal embedded and external db config
+5. what is entity and different types of mappings
+6. logging in spring boot application

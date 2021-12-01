@@ -1,0 +1,17 @@
+@RequestMapping:
+	
+	1.maps HTTP requests (URLs) with methods:
+
+		@RequestMapping("/")
+		public void helloWorld() {
+   			 return "Hello World!";
+		}
+	2.It allows us to run methods and pieces of code each 
+	 time an endpoint is hit by the end-user with an HTTP request.
+
+	3.several new annotations, the @RequestMapping variants:
+
+		@GetMapping   :  GetMapping Annotation is for mapping HTTP GET requests onto specific handler methods
+		@PostMapping  :  maps HTTP POST requests onto specific handler methods. @RequestMapping(method = RequestMethod. POST)
+		@DeleteMapping:  maps HTTP DELETE requests onto specific handler methods. @RequestMapping(method = RequestMethod. DELETE) 
+		@PatchMapping :  for mapping HTTP PATCH requests onto specific handler methods @RequestMapping(method = RequestMethod. PATCH) .

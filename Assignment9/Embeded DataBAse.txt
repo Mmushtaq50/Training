@@ -1,0 +1,14 @@
+Embeded DataBase:
+
+	 Ease of configuration, quick startup time, testability, and the ability to rapidly
+	  evolve SQL during development are just some of the benefits of using an embedded database.
+
+	-There is a special file called application.properties in Spring Boot, where you can 
+	  define your authorization data to get connection with your remote database.
+
+Internal database	:
+		Maven willl take care of injecting all Depedencies 
+	
+external database	
+	The external database is a sample and includes an id , username and data
+	 it allows us to keep compile-time and run-time configuration settings nicely separated from each other.

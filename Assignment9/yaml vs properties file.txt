@@ -1,0 +1,32 @@
+ yaml : .yml File
+
+	1.YAML is a configuration language like Python, Ruby and Java.
+	2.java heavily use (.yml File) for configuring the various properties while developing the applications.
+	3.Supports key/val, basically map, List and scalar types (int, string etc.) 
+	4.Spring Framework doesn’t support @PropertySources with .yml files	
+	5.If you are using spring profiles, you can have multiple profiles in one single .yml file
+	6.While retrieving the values from .yml file we get the value as whatever
+	  the respective type (int, string etc.) is in the configuration
+
+
+
+	
+
+ properties file: (.properties File)
+	
+	1.This file extension is used for the configuration application. 
+	2.These are used as the Property Resource Bundles files in technologies like Java, etc. 
+	3.Supports key/val, but doesn’t support values beyond the string
+	4.supports @PropertySources with .properties file
+	5.Each profile need one separate .properties file
+	6.While retrieving the values from .properties files we get strings regardless of what the actual value type is in the configuration
+
+
+NOTE: .yml file is advantageous over .properties file as it has type safety, hierarchy
+	 and supports list but if you are using spring, spring has a number of conventions
+	 as well as type conversions that allow you to get effectively all of these
+	 same features that YAML provides for you. 
+	
+	One advantage that you may see is, out of using the YAML(.yml) file is if you
+	 are using more than one application that read the same configuration file. 
+	you may see better support in other languages for YAML(.yml) as opposed to .properties.

@@ -1,0 +1,26 @@
+Spring Boot:
+
+	1.Spring Boot makes it easy to create stand-alone, production-grade 
+	 Spring based Applications that you can "just run".
+
+	2.Spring Boot offers a fast way to build applications.
+
+	Advantages:
+		Spring's dependency injection approach encourages writing testable code.
+		 Easy to use but powerful database transaction management capabilities. 
+		 Spring simplifies integration with other Java frameworks like JPA/Hibernate ORM, Struts/JSF/etc
+
+
+
+
+differebece between Spring  and Spring Boot:
+
+		Spring is an open-source lightweight framework widely used to develop enterprise applications. 
+		 Spring Boot is built on top of the conventional spring framework, widely used to develop REST APIs.
+		 Spring Boot provides embedded servers such as Tomcat and Jetty etc.
+
+@SpringBootApplication:
+	Spring Boot @SpringBootApplication annotation is used to mark
+	 a configuration class that declares one or more @Bean methods and also triggers
+	 auto-configuration and component scanning. It's same as declaring a class 
+	with @Configuration, @EnableAutoConfiguration and @ComponentScan annotations

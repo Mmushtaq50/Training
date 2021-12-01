@@ -1,0 +1,136 @@
+JSP : (Servlet + Html)
+      JSP is a webSide componet which will be the combination 
+	on Servlet and HTML
+ 
+//implicit objects - out, response, session, application, page, request
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Servlet:
+	Servlets is a javaSide component that will accept the HTTp servlet Request
+ 	and generate HTTP servlet Response.
+
+	-when client send the request ,there should be someone who shlould send the response : by servlet
+	-Inorder to get our our HTTP servlet Response, we must need a class and we should extend our class with HTTPServlet,
+		but in case of Rest_Api this is not reqired 
+
+servlet lifeCyce:
+		  1.init  
+		  2.doGet,doPost or service
+		  3.destroy
+
+
+
+How do you call a servlet?
+	servlets are configured in web.Xml (Deployment Descriptor) where we do mapping
+	for the respective servlet to be uniquely identified by a url patterns.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+What is the use of Web.Xml?
+	1.web.xml defines mappings between URL paths and the servlets that handle requests with
+	 those paths. 
+
+	2.The web server uses this configuration to identify the servlet to handle 
+	 a given request and call the class method that corresponds to the 
+	 request method (e.g. the doGet() method for HTTP GET requests).
+
+	3.It contains all resources needed to run the application, from Java classes, to JAR files
+	 and libraries, to other supporting files that the developer does not want a web user to access.
+
+	4.web.xml :1.Helps in providing the Dependencies(like WebApp Apis)
+		 2.Helps in providing the plugins (plugins inorder to run and compile the webApp application)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+How many types of servlets are there?
+		     Two types of servlets -
+			Generic and HTTP
+	   Generic						HTTP
+	1.extends GenericServlet				1.extends HTTPServlet
+	2.doPost						2.getPost
+
+
+what are all methods available in servlets
+
+
+synchronus: 
+	1.Submit a request to server and waiting for the response
+	(A synchronous client constructs an HTTP structure, sends a request, and waits for a response.)
+
+Asynchronus:
+	2.submit request in background and process with other Tasks.
+	(An asynchronous client constructs an HTTP structure, sends a request, and moves on.)
+
+AJAX -Asynchronus JavaScript using XML 
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Rest_API:
+
+		So there is an Rest API(Somthing that will connect the client with the server)so by
+		  genertating the servlet  
+					Servlets is a javaSide component that will accept the HTTP servlet Request
+ 					 and generate HTTP servlet Response. (HTTP = WebPages)
+
+	Example: 
+		-Imagine you want to create a weather report App,(Inorder to do that we need some
+		   data about at which place the weather report it,like weather report in US exapmle)
+
+		 -So there are some Web services available on internet who are ready to give you that data Resources
+		  All you need to do is call  and connect them 
+
+		-So there is an Rest API(Somthing that will connect the client with the server)so by
+		  genertating the servlet  
+					Servlets is a javaSide component that will accept the HTTP servlet Request
+ 					 and generate HTTP servlet Response. (HTTP = WebPages)
+
+		-But the problem arises here, which is, the client dont want the response in HTTP(Web pages) instead he
+		  need the response in the form of data  (Example : data about weather report)
+		
+		-So client will say to servlet i dont want webPage i need data Resource
+	           ,Servlet will say ok i can give you the data in two formates either by 
+		    JSON or  XML (which will send the state of an object but not an object)
+
+		-That why it is called Rest_API(rest:representational state transfer) Rest_API
+		now that state of an object can be send using JSON oe XMl
+	
+		-By doing this, client is gettig Data resource  in the from servlet via: JSON / XML 
+			do we user CURD operation or HTTP methods in order to manipulate with data resource
+
+		-when it comes to Cimate report APP ,dosent matter which APP/wesite you are creating or what requirment we have 
+		 we do one simple thing ie: we do CURD operations
+						   -we create the resource
+						   -we read the resource
+						   -we update the resource
+						   -we delete the resource
+
+		-so instead of using the CURD operations, we also have HTTP methods
+								- PUT  method
+								- POST method 
+								- PULL method
+								- DELETE method
+
+Note: 1.Before json developers used to work on XML(like when you want to send data from server to client) 
+	 ,infact still some of them use XML, but then json is trying to overide the XMl features so it has become a standered format.
+
+	JSON:
+		{"country";{
+			"city";{
+			 "temp":33,
+			 "humidity":40
+				}
+			}
+
+	XML:
+		<country>
+			<city>
+				<temp>33</temp>
+				<humidity>40</humidity>
+			</city>
+		</country>
+		
+
+      2.In javaScript we create an array Object which is basically an JSON Object.

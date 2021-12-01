@@ -1,0 +1,14 @@
+What is an entity in spring boot?
+
+	-DataBade Object -DBO (object relational Mapping)
+	
+	-Entities will help map tables with object
+	-without primary key Entity will not work(no null,no dublicate)
+	
+	 *.An entity represents a table stored in a database. 
+	   Every instance of an entity represents a row in the table.
+
+	1.An entity is a lightweight persistence domain object. 
+	2.Typically, an entity represents a table in a relational database, and
+	  each entity instance corresponds to a row in that table.
+	3.The primary programming artifact of an entity is the entity class, although entities can use helper classes.

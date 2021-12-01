@@ -1,0 +1,13 @@
+JPA has features for DDL generation, and these can be set up
+  to run on startup against the database. This is controlled through two external properties:
+
+   spring.jpa.generate-ddl (boolean) switches the feature on and off and is vendor independent.
+
+
+
+
+
+
+   spring.jpa.hibernate.ddl-auto (enum) is a Hibernate feature that controls the behavior in a more fine-grained way.
+	-You can set spring.jpa.hibernate.ddl-auto explicitly and the 
+	  standard Hibernate property values are none, validate, update, create-drop

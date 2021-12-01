@@ -1,0 +1,16 @@
+Logging:
+	Spring Boot uses Apache Commons Logging for all internal logging , but leaves the underlying log implementation open.
+	Default configurations are provided for Java Util Logging, Log4J2, and Logback
+	
+	1.the basic way to use logging is loggerFactory and it has a method called getLogger
+		Logger logger = LoggerFactory.getLogger(classname.class);
+
+	2.The spring-boot-starter-logging dependency is inside spring-boot-starter-Web 
+		
+		c.    spring-jcl (spring commons logging bridge)
+				
+		b.     spring-boot-starter-logging
+
+		a.	spring-boot-starter-Web 
+
+		These are the dependencies which is causing the logging functionality in your aplication.
