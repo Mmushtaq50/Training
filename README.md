@@ -1,2 +1,2 @@
 # Training
-This Repository is to train Java by prasad sir and complete my further Assignments...!
+This Repository is to train Java and complete further Assignments...!
